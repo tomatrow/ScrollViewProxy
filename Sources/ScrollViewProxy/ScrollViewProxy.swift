@@ -37,6 +37,8 @@ extension View {
     }
 }
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+
 struct ScrollViewProxyPreferenceData<ID: Hashable>: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
@@ -46,6 +48,8 @@ struct ScrollViewProxyPreferenceData<ID: Hashable>: Equatable {
     var id: ID
 }
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+
 struct ScrollViewProxyPreferenceKey<ID: Hashable>: PreferenceKey {
     static var defaultValue: [ScrollViewProxyPreferenceData<ID>] { [] }
     static func reduce(value: inout Value, nextValue: () -> Value) {
@@ -53,6 +57,7 @@ struct ScrollViewProxyPreferenceKey<ID: Hashable>: PreferenceKey {
     }
 } 
 
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 struct ScrollViewProxyPreferenceModifier<ID: Hashable>: ViewModifier {
     let id: ID
     func body(content: Content) -> some View {
